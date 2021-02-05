@@ -1,0 +1,32 @@
+.day {
+  display: block;
+  text-align: center;
+  color: rgb(87, 31, 43);
+  border: 1px solid;
+  border-color: rgb(87, 31, 43);
+  border-radius: 4px;
+  font-size: 18px;
+  width: 90px;
+  background-color: rgb(240, 248, 255, 0.4);
+}
+
+.weather-image {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.forecast {
+  position: absolute;
+  display: inline;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#forecast-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 9px;
+}

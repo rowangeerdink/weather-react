@@ -1,0 +1,40 @@
+.search-city {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.search-button {
+  display: inline;
+  position: relative;
+  color: rgb(87, 31, 43);
+  padding: 0px 7px 0px 7px;
+  margin: 10px 0px 15px auto;
+  height: 38px;
+  left: 15px;
+  width: 100px;
+  border: 1px solid;
+  border-color: rgb(87, 31, 43);
+  border-radius: 4px;
+  background-color: rgb(240, 248, 255, 0.4);
+}
+
+.current-location-button {
+  display: inline;
+  position: relative;
+  color: rgb(87, 31, 43);
+  top: -63px;
+  left: 46px;
+  height: 38px;
+  border: 1px solid;
+  margin: 10px 0px 15px auto;
+  padding: 0px 7px 0px 7px;
+  margin-bottom: 15px;
+  border-color: rgb(87, 31, 43);
+  border-radius: 4px;
+  background-color: rgb(240, 248, 255, 0.4);
+  width: max-content;
+}
