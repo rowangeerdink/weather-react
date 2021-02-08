@@ -12,11 +12,11 @@ export default function App() {
   return (
     <div className="container">
       <div className="weather-container weather-app">
-        <div className="row ">
-          <div className="col-6">
+        <div className="row top-row ">
+          <div className="col-md-6">
             <WeatherToday />
           </div>
-          <div className="col-6 search-city">
+          <div className="col-md-6 . offset earch-city">
             <SearchCity />
             <WeatherDescription />
           </div>

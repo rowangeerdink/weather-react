@@ -23,12 +23,15 @@
   background-color: rgb(240, 248, 255, 0.4);
 }
 
+.current-location {
+  margin: 10px 0px 15px 20px;
+}
+
 .current-location-button {
   display: inline;
   color: rgb(87, 31, 43);
   height: 38px;
   border: 1px solid;
-  margin: 10px 0px 15px 10px;
   padding: 0px 7px 0px 7px;
   margin-bottom: 15px;
   border-color: rgb(87, 31, 43);

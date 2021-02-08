@@ -19,7 +19,7 @@ export default function SearchCity() {
                 <input type="submit" value="Search" className="search-button" />
               </div>
 
-              <div className="col-4 ">
+              <div className="col-4 current-location ">
                 <button
                   value="My Location"
                   type="button"

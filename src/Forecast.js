@@ -6,7 +6,6 @@ export default function Forecast() {
     <div className="row forecast-row">
       <div className="col">
         <h5>Tomorrow</h5>
-        <i class="fas fa-cloud-showers-heavy weather-image"></i>
         <p>9°C</p>
       </div>
 
