@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="Footer">
       <small>
         {" "}
-        <a href="https://github.com/rowangeerdink/weahter-app">
+        <a href="https://github.com/rowangeerdink/weather-react">
           {" "}
           Open source code
         </a>{" "}
