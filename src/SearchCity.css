@@ -1,21 +1,22 @@
 .search-city {
+  padding: 0px 0px 0px 30px;
+}
+
+.search-form {
+  width: 200px;
   margin-top: 30px;
   margin-bottom: 15px;
   text-align: left;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
+  display: block;
 }
 
 .search-button {
   display: inline;
-  position: relative;
   color: rgb(87, 31, 43);
   padding: 0px 7px 0px 7px;
-  margin: 10px 0px 15px auto;
+  margin: 10px 5px 15px auto;
   height: 38px;
-  left: 15px;
-  width: 100px;
+  width: fit-content;
   border: 1px solid;
   border-color: rgb(87, 31, 43);
   border-radius: 4px;
@@ -24,13 +25,10 @@
 
 .current-location-button {
   display: inline;
-  position: relative;
   color: rgb(87, 31, 43);
-  top: -63px;
-  left: 46px;
   height: 38px;
   border: 1px solid;
-  margin: 10px 0px 15px auto;
+  margin: 10px 0px 15px 10px;
   padding: 0px 7px 0px 7px;
   margin-bottom: 15px;
   border-color: rgb(87, 31, 43);

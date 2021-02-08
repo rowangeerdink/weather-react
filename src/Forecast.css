@@ -1,5 +1,5 @@
 .day {
-  display: block;
+  display: inline;
   text-align: center;
   color: rgb(87, 31, 43);
   border: 1px solid;
@@ -11,7 +11,7 @@
 }
 
 .weather-image {
-  display: block;
+  display: inline;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 40px;
@@ -19,14 +19,12 @@
 }
 
 .forecast {
-  position: absolute;
   display: inline;
   margin-top: 30px;
   margin-bottom: 15px;
 }
 
-#forecast-row {
-  margin-top: 20px;
+.forecast-row {
+  margin-top: 50px;
   margin-bottom: 20px;
-  margin-left: 9px;
 }
