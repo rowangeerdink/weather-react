@@ -11,25 +11,25 @@ export default function Forecast() {
 
       <div className="col">
         <h5>Tuesday</h5>
-        <i class="fas fa-cloud weather-image"></i>
+        <i className="fas fa-cloud weather-image"></i>
         <p>11°C</p>
       </div>
 
       <div className="col">
         <h5>Wednesday</h5>
-        <i class="fas fa-cloud-sun-rain weather-image"></i>
+        <i className="fas fa-cloud-sun-rain weather-image"></i>
         <p>10°C</p>
       </div>
 
       <div className="col">
         <h5>Thursday</h5>
-        <i class="fas fa-cloud weather-image"></i>
+        <i className="fas fa-cloud weather-image"></i>
         <p>8°C</p>
       </div>
 
       <div className="col">
         <h5>Friday</h5>
-        <i class="fas fa-cloud-sun weather-image"></i>
+        <i className="fas fa-cloud-sun weather-image"></i>
         <p>12°C</p>
       </div>
     </div>
