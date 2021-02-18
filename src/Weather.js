@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate.js";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -9,9 +10,8 @@ export default function Weather(props) {
     console.log(response.data);
     setWeatherData({
       temperature: response.data.main.temp,
-      date: "Monday 18 January 15:00",
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
-      city: response.data.name,
       description: response.data.weather[0].description,
       feelsLike: response.data.main.feels_like
     });
@@ -23,8 +23,10 @@ export default function Weather(props) {
     return (
       <div row top-row>
         <div className="col-md-6 weather-today ">
-          <h1 className="city">{weatherData.city}</h1>
-    <p className="DateTimeToday">{weatherData.date}</p>
+          <h1 className="city"> {props.defaultCity} </h1>
+          <p className="DateTimeToday">
+            <FormattedDate date={weatherData.date} />{" "}
+          </p>
           <p id="weatherIcon">❄️</p>
           <p>
             <span className="temperature">
@@ -69,9 +71,15 @@ export default function Weather(props) {
           <div className="row weather-description">
             <div className="col">
               <ul>
-                <li className="description text-capitalize">{weatherData.description}</li>
-                <li className="feels-like">{Math.round(weatherData.feelsLike)} °C</li>
-                <li className="windspeed">{Math.round(weatherData.wind)} Km/H</li>
+                <li className="description text-capitalize">
+                  {weatherData.description}
+                </li>
+                <li className="feels-like">
+                  {Math.round(weatherData.feelsLike)} °C
+                </li>
+                <li className="windspeed">
+                  {Math.round(weatherData.wind)} Km/H
+                </li>
               </ul>
             </div>
           </div>
