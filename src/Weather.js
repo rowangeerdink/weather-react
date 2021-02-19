@@ -13,7 +13,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
-      feelsLike: response.data.main.feels_like
+      feelsLike: response.data.main.feels_like,
     });
 
     setReady(true);
@@ -22,7 +22,6 @@ export default function Weather(props) {
   if (ready) {
     return (
       <div className="row top-row">
-        
         <div className="col-md-6 weather-today ">
           <h1 className="city"> {props.defaultCity} </h1>
           <p className="DateTimeToday">
@@ -90,7 +89,7 @@ export default function Weather(props) {
   } else {
     const apiKey = "12087b5c6e656cb621cae20a854dfb64";
     let unit = "metric";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${unit}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
