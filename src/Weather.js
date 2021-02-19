@@ -22,6 +22,7 @@ export default function Weather(props) {
   if (ready) {
     return (
       <div className="row top-row">
+        
         <div className="col-md-6 weather-today ">
           <h1 className="city"> {props.defaultCity} </h1>
           <p className="DateTimeToday">
