@@ -21,18 +21,18 @@ export default function Weather(props) {
 
   if (ready) {
     return (
-      <div row top-row>
+      <div className="row top-row">
         <div className="col-md-6 weather-today ">
           <h1 className="city"> {props.defaultCity} </h1>
           <p className="DateTimeToday">
             <FormattedDate date={weatherData.date} />{" "}
           </p>
-          <p id="weatherIcon">❄️</p>
+          <p className="weatherIcon">❄️</p>
           <p>
             <span className="temperature">
               {Math.round(weatherData.temperature)}
             </span>
-            <span id="celcius"> °C</span>
+            <span className="celcius"> °C</span>
           </p>
         </div>
 

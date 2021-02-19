@@ -10,21 +10,17 @@
   z-index: 2;
 }
 
-.date-time-today {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.weather-image-today {
+.weatherIcon {
   display: block;
-  font-size: 100px;
+  font-size: 40px;
   padding-top: 20px;
   padding-bottom: 15px;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.TemperatureToday {
+.temperature {
   font-size: 30px;
+  font-weight: 100;
 }
 
 .units {
@@ -45,11 +41,49 @@
   padding-top: 10px;
 }
 
-#celcius {
+.celcius {
   font-size: 30px;
   font-weight: 200;
 }
 
-#weatherIcon {
-  font-size: xx-large;
+.search-city {
+  padding: 0px 0px 0px 30px;
+}
+
+.search-form {
+  width: 200px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+  display: block;
+}
+
+.search-button {
+  display: inline;
+  color: rgb(87, 31, 43);
+  padding: 0px 7px 0px 7px;
+  margin: 10px 5px 15px auto;
+  height: 38px;
+  width: fit-content;
+  border: 1px solid;
+  border-color: rgb(87, 31, 43);
+  border-radius: 4px;
+  background-color: rgb(240, 248, 255, 0.4);
+}
+
+.current-location {
+  margin: 10px 0px 15px 20px;
+}
+
+.current-location-button {
+  display: inline;
+  color: rgb(87, 31, 43);
+  height: 38px;
+  border: 1px solid;
+  padding: 0px 7px 0px 7px;
+  margin-bottom: 15px;
+  border-color: rgb(87, 31, 43);
+  border-radius: 4px;
+  background-color: rgb(240, 248, 255, 0.4);
+  width: max-content;
 }
