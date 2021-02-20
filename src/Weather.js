@@ -15,6 +15,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       feelsLike: response.data.main.feels_like,
+      city: response.data.name,
     });
 
     setReady(true);
@@ -40,7 +41,7 @@ export default function Weather(props) {
     return (
       <div className="row top-row">
         <div className="col-md-6 weather-today ">
-          <h1 className="city"> {props.defaultCity} </h1>
+          <h1 className="city"> {weatherData.city} </h1>
           <p className="DateTimeToday">
             <FormattedDate date={weatherData.date} />
           </p>
@@ -55,7 +56,7 @@ export default function Weather(props) {
 
         <div className="col-md-6 search-description ">
           <div className="row">
-            <form on submit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <input
                 type="search"
                 placeholder="Search City"
