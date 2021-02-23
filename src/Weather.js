@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate.js";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -28,6 +29,7 @@ export default function Weather(props) {
   }
 
   function handleCityChange(event) {
+    
     setCity(event.target.value);
   }
 
@@ -47,12 +49,9 @@ export default function Weather(props) {
             <FormattedDate date={weatherData.date} />
           </p>
           <img src={weatherData.iconUrl} alt={weatherData.description} />
-          <p>
-            <span className="temperature">
-              {Math.round(weatherData.temperature)}
-            </span>
-            <span className="celcius"> °C</span>
-          </p>
+          <div className="temperature">
+            <WeatherTemperature celsius={weatherData.temperature} />
+          </div>
         </div>
 
         <div className="col-md-6 search-description ">
