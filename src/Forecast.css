@@ -10,6 +10,11 @@
   background-color: rgb(240, 248, 255, 0.4);
 }
 
+.forecastTemperature {
+  font-size: 16px;
+  font-weight: 100;
+}
+
 .weather-image {
   display: inline;
   padding-top: 10px;

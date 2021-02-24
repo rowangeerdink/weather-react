@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate.js";
 import WeatherTemperature from "./WeatherTemperature";
+import Forecast from "./Forecast";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -40,8 +41,6 @@ export default function Weather(props) {
   }
 
   function currentLocation() {
-    let lat = "";
-    let lon = "";
     let unit = "metric";
     let apiKey = "12087b5c6e656cb621cae20a854dfb64";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=position.coords.latitude&lon=position.coords.longitude&appid=${apiKey}&units=${unit}`;
@@ -50,6 +49,7 @@ export default function Weather(props) {
 
   if (ready) {
     return (
+      <div>
       <div className="row top-row">
         <div className="col-md-6 weather-today ">
           <h1 className="city"> {weatherData.city} </h1>
@@ -79,7 +79,6 @@ export default function Weather(props) {
                     type="submit"
                     value="Search"
                     className="search-button"
-                    onClick={currentLocation}
                   />
                 </div>
 
@@ -88,6 +87,7 @@ export default function Weather(props) {
                     value="My Location"
                     type="button"
                     className="current-location-button"
+                    onClick={currentLocation}
                   >
                     Current Location
                   </button>
@@ -113,6 +113,10 @@ export default function Weather(props) {
           </div>
         </div>
       </div>
+      <div>
+          <Forecast  city={weatherData.city}/>
+        </div>
+        </div>
     );
   } else {
     search();

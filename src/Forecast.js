@@ -1,37 +1,34 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./Forecast.css";
+import WeatherForecastPreview from "./WeatherForecastPreview";
 
-export default function Forecast() {
-  return (
-    <div className="row forecast-row">
-      <div className="col">
-        <h5>Tomorrow</h5>
-        <p>9°C</p>
-      </div>
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
 
-      <div className="col">
-        <h5>Tuesday</h5>
-        <i className="fas fa-cloud weather-image"></i>
-        <p>11°C</p>
-      </div>
+  function handleForecastResponse(response) {
+    setForecast(response.data);
+    setLoaded(true);
+    console.log(response.data);
+  }
 
-      <div className="col">
-        <h5>Wednesday</h5>
-        <i className="fas fa-cloud-sun-rain weather-image"></i>
-        <p>10°C</p>
+  if (loaded && props.city === forecast.city.name) {
+    return (
+      <div className="row forecast-row">
+        <WeatherForecastPreview data={forecast.list[0]} />
+        <WeatherForecastPreview data={forecast.list[1]} />
+        <WeatherForecastPreview data={forecast.list[2]} />
+        <WeatherForecastPreview data={forecast.list[3]} />
+        <WeatherForecastPreview data={forecast.list[4]} />
+        <WeatherForecastPreview data={forecast.list[5]} />
       </div>
+    );
+  } else {
+    let apiKey = "12087b5c6e656cb621cae20a854dfb64";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleForecastResponse);
 
-      <div className="col">
-        <h5>Thursday</h5>
-        <i className="fas fa-cloud weather-image"></i>
-        <p>8°C</p>
-      </div>
-
-      <div className="col">
-        <h5>Friday</h5>
-        <i className="fas fa-cloud-sun weather-image"></i>
-        <p>12°C</p>
-      </div>
-    </div>
-  );
+    return null;
+  }
 }
