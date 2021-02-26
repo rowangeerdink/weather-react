@@ -14,14 +14,21 @@ export default function WeatherTemperature(props) {
     setUnit("celsius");
   }
 
-  function fahrenheit() {
-    return (props.celsius * 9) / 5 + 32;
+  function fahrenheitMax() {
+    return (props.celsiusMax * 9) / 5 + 32;
+  }
+
+  function fahrenheitMin() {
+    return (props.celsiusMin * 9) / 5 +32;
   }
 
   if (unit === "celsius") {
     return (
       <div>
-        <span className="WeatherTemperature">{Math.round(props.celsius)}</span>
+        <span className="WeatherTemperature">
+          <strong>{Math.round(props.celsiusMax)}</strong> /{" "}
+          {Math.round(props.celsiusMin)} °C
+        </span>
         <span className="unit">
           {" "}
           °C |{" "}
@@ -34,7 +41,10 @@ export default function WeatherTemperature(props) {
   } else {
     return (
       <div>
-        <span className="WeatherTemperature">{Math.round(fahrenheit())}</span>
+        <span className="WeatherTemperature">
+          <strong>{Math.round(fahrenheitMax())}</strong> /{" "}
+          {Math.round(fahrenheitMin())} °F
+        </span>
         <span className="unit">
           {" "}
           <a href="/" onClick={showCelsius}>

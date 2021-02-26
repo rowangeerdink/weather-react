@@ -40,7 +40,10 @@
   padding-top: 10px;
 }
 
-
+.celsius {
+  font-size: px;
+  font-weight: 200;
+}
 
 .search-city {
   padding: 0px 0px 0px 30px;

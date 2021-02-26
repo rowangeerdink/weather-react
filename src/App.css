@@ -1,8 +1,11 @@
-
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.container {
+  
+
 }
 
 @media (prefers-reduced-motion: no-preference) {

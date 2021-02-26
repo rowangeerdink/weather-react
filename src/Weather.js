@@ -13,6 +13,8 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       temperature: response.data.main.temp,
+      minTemperature: response.data.main.temp_min,
+      maxTemperature: response.data.main.temp_max,
       date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
@@ -50,73 +52,78 @@ export default function Weather(props) {
   if (ready) {
     return (
       <div>
-      <div className="row top-row">
-        <div className="col-md-6 weather-today ">
-          <h1 className="city"> {weatherData.city} </h1>
-          <p className="DateTimeToday">
-            <FormattedDate date={weatherData.date} />
-          </p>
-          <img src={weatherData.iconUrl} alt={weatherData.description} />
-          <div className="temperature">
-            <WeatherTemperature celsius={weatherData.temperature} />
-          </div>
-        </div>
-
-        <div className="col-md-6 search-description ">
-          <div className="row">
-            <form onSubmit={handleSubmit}>
-              <input
-                type="search"
-                placeholder="Search City"
-                className="form-control search-form"
-                autoComplete="off"
-                onChange={handleCityChange}
+        <div className="row top-row">
+          <div className="col-md-6 weather-today ">
+            <h1 className="city"> {weatherData.city} </h1>
+            <p className="DateTimeToday">
+              <FormattedDate date={weatherData.date} />
+            </p>
+            <img src={weatherData.iconUrl} alt={weatherData.description} />
+            <div className="temperature">
+              <WeatherTemperature
+                celsiusMax={weatherData.maxTemperature}
+                celsiusMin={weatherData.minTemperature}
+                unit={weatherData.unit}
+                setUnit={weatherData.setUnit}
               />
-
-              <div className="row">
-                <div className="col-2 ">
-                  <input
-                    type="submit"
-                    value="Search"
-                    className="search-button"
-                  />
-                </div>
-
-                <div className="col-4 current-location ">
-                  <button
-                    value="My Location"
-                    type="button"
-                    className="current-location-button"
-                    onClick={currentLocation}
-                  >
-                    Current Location
-                  </button>
-                </div>
-              </div>
-            </form>
+            </div>
           </div>
 
-          <div className="row weather-description">
-            <div className="col">
-              <ul>
-                <li className="description text-capitalize">
-                  {weatherData.description}
-                </li>
-                <li className="feels-like">
-                  {Math.round(weatherData.feelsLike)} °C
-                </li>
-                <li className="windspeed">
-                  {Math.round(weatherData.wind)} Km/H
-                </li>
-              </ul>
+          <div className="col-md-6 search-description ">
+            <div className="row">
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="search"
+                  placeholder="Search City"
+                  className="form-control search-form"
+                  autoComplete="off"
+                  onChange={handleCityChange}
+                />
+
+                <div className="row">
+                  <div className="col-2 ">
+                    <input
+                      type="submit"
+                      value="Search"
+                      className="search-button"
+                    />
+                  </div>
+
+                  <div className="col-4 current-location ">
+                    <button
+                      value="My Location"
+                      type="button"
+                      className="current-location-button"
+                      onClick={currentLocation}
+                    >
+                      Current Location
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div className="row weather-description">
+              <div className="col">
+                <ul>
+                  <li className="description text-capitalize">
+                    {weatherData.description}
+                  </li>
+                  <li className="feels-like">
+                    {Math.round(weatherData.feelsLike)} °C
+                  </li>
+                  <li className="windspeed">
+                    {Math.round(weatherData.wind)} Km/H
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+        <div>
+          <Forecast city={weatherData.city} />
+        </div>
       </div>
-      <div>
-          <Forecast  city={weatherData.city}/>
-        </div>
-        </div>
     );
   } else {
     search();
