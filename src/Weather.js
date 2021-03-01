@@ -43,10 +43,7 @@ export default function Weather(props) {
   }
 
   function currentLocation() {
-    let unit = "metric";
-    let apiKey = "12087b5c6e656cb621cae20a854dfb64";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=position.coords.latitude&lon=position.coords.longitude&appid=${apiKey}&units=${unit}`;
-    axios.get(apiUrl).then(handleResponse);
+    navigator.geolocation.getCurrentPosition(handleResponse);
   }
 
   if (ready) {
@@ -63,8 +60,10 @@ export default function Weather(props) {
               <WeatherTemperature
                 celsiusMax={weatherData.maxTemperature}
                 celsiusMin={weatherData.minTemperature}
-                unit={weatherData.unit}
-                setUnit={weatherData.setUnit}
+                fahrenheitMax={(weatherData.maxTemperature * 9) / 5 + 32}
+                fahrenheitMin={(weatherData.minTemperature * 9) / 5 + 32}
+                unit="celsius"
+                setUnit="fahrenheit"
               />
             </div>
           </div>
@@ -109,12 +108,15 @@ export default function Weather(props) {
                   <li className="description text-capitalize">
                     {weatherData.description}
                   </li>
-                  <li className="feels-like">
-                    {Math.round(weatherData.feelsLike)} °C
+                  <li className="description feels-like">
+                    {" "}
+                    Feels like:{""} {Math.round(weatherData.feelsLike)} °C
                   </li>
-                  <li className="windspeed">
-                    {Math.round(weatherData.wind)} Km/H
+                  <li className="description windspeed">
+                    {" "}
+                    Windspeed: {Math.round(weatherData.wind)} Km/H
                   </li>
+                  <li className=" description sunrise"></li>
                 </ul>
               </div>
             </div>
