@@ -1,0 +1,13 @@
+.day {
+  margin: 0px 7px;
+  width: 70px;
+  border: rgb(31, 79, 87);
+}
+
+.time {
+  color: #000000;
+}
+
+.forecastTemperature {
+  color: #000000;
+}

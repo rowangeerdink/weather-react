@@ -20,7 +20,7 @@ export default function WeatherTemperature(props) {
         <span className="WeatherTemperature">
           <strong>{Math.round(props.celsiusMax)}</strong> /{" "}
           <span className="minTemperature">
-            {Math.round(props.celsiusMin)} °C
+            {Math.round(props.celsiusMin)} <span className="unitSign">°C</span>
           </span>
         </span>
         <span className="unit">
@@ -38,7 +38,7 @@ export default function WeatherTemperature(props) {
         <span className="WeatherTemperature">
           <strong>{Math.round(props.fahrenheitMax)}</strong> /{" "}
           <span className="minTemperature">
-            {Math.round(props.fahrenheitMin)} °F
+            {Math.round(props.fahrenheitMin)} <span className="unitSign">°F</span>
           </span>
         </span>
         <span className="unit">

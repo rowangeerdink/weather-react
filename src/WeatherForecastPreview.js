@@ -1,4 +1,6 @@
 import React from "react";
+import "./WeatherForecastPreview.css";
+
 
 export default function WeatherForecastPreview(props) {
   function hours() {
@@ -16,8 +18,8 @@ export default function WeatherForecastPreview(props) {
   }
 
   function fahrenheit() {
-    let temperature = Math.round((props.data.main.temp * 9) / 5 + 32);
-    return `${temperature}°F`;
+    let fahrenheit = Math.round((props.data.main.temp * 9) / 5 + 32);
+    return `${fahrenheit}°F`;
   }
 
   if (props.unit === "celsius") {

@@ -69,12 +69,12 @@ export default function Weather(props) {
           </div>
 
           <div className="col-md-6 search-description ">
-            <div className="row">
+            <div className="row search-form">
               <form onSubmit={handleSubmit}>
                 <input
                   type="search"
                   placeholder="Search City"
-                  className="form-control search-form"
+                  className="form-control search-bar"
                   autoComplete="off"
                   onChange={handleCityChange}
                 />
@@ -103,7 +103,7 @@ export default function Weather(props) {
             </div>
 
             <div className="row weather-description">
-              <div className="col">
+              <div className="col weather-description">
                 <ul>
                   <li className="description text-capitalize">
                     {weatherData.description}

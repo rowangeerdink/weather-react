@@ -9,3 +9,8 @@
 .minTemperature {
   font-size: 18px;
 }
+
+.unitSign {
+  font-size: 30px;
+  font-weight: smaller;
+}

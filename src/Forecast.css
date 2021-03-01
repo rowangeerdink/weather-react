@@ -1,13 +1,12 @@
 .day {
   display: inline;
   text-align: center;
-  color: rgb(87, 31, 43);
+  color: rgb(31, 79, 87);
   border: 1px solid;
-  border-color: rgb(87, 31, 43);
+  color: rgb(31, 79, 87);
   border-radius: 4px;
   font-size: 18px;
   width: 90px;
-  background-color: rgb(240, 248, 255, 0.4);
 }
 
 .forecastTemperature {

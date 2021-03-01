@@ -30,7 +30,7 @@ ul {
 }
 
 p {
-  color: rgb(87, 31, 43);
+  color: rgb(90, 155, 167);
 }
 
 img {
@@ -55,7 +55,7 @@ small {
 
 .weather-app {
   border: 1px solid;
-  border-color: rgb(87, 31, 43);
+  color: rgb(31, 79, 87);
   border-radius: 4px;
   max-width: 630px;
   margin-top: 15px;
