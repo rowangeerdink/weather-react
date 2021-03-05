@@ -25,6 +25,12 @@ export default function Weather(props) {
 
     setReady(true);
   }
+  function search() {
+    const apiKey = "12087b5c6e656cb621cae20a854dfb64";
+    let unit = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -35,15 +41,16 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function search() {
-    const apiKey = "12087b5c6e656cb621cae20a854dfb64";
-    let unit = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  function handleLocation(position) {
+    let apiKey = `12087b5c6e656cb621cae20a854dfb64`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function currentLocation() {
-    navigator.geolocation.getCurrentPosition(handleResponse);
+  function currentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(handleLocation);
   }
 
   if (ready) {
@@ -91,7 +98,7 @@ export default function Weather(props) {
                   <div className="col-4 current-location ">
                     <button
                       value="My Location"
-                      type="button"
+                      type="submit"
                       className="current-location-button"
                       onClick={currentLocation}
                     >
